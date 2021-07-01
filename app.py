@@ -12,7 +12,7 @@ Por exemplo, a pessoa indicaria o art. 10 da lei nova e o programa indicaria qua
 import requests
 from bs4 import BeautifulSoup
 
-url0 = 'sites/L14133.htm' # Nova Lei de Licitações e Contratos Administrativos
+url0 = 'sites/L14133.htm' # Nova Lei de Licitações e Contratos Administrativos (lei principal)
 url1 = 'sites/L8666compilado.htm' # Antiga Lei de Licitações e Contratos Administrativos
 url2 = 'sites/L10520.htm' # Antiga Lei do Pregão
 url3 = 'sites/L12462compilado.htm' # Antiga Lei do RDC
@@ -59,5 +59,14 @@ lei14133 = get_arts(text0)
 lei8666 = get_arts(text1)
 lei10520 = get_arts(text2)
 lei12462 = get_arts(text3)
+            
 
-
+relacoes = {'lei14133["Art1"]': {'lei8666["Art1"]':lei8666['Art1'],'lei10520["Art1"]':lei10520['Art1'], 'lei12462["Art1"]':lei12462['Art1']}, 'lei14133["Art2"]': {'lei8666["Art2"]':lei8666['Art2']}, 'lei14133["Art5"]': {'lei8666["Art3"]':lei8666['Art3'], 'lei12462["Art3"]': lei12462['Art3']}, 'lei14133["Art7"]': 'Artigo novo, sem correspondência'}             
+            
+            
+            
+            
+            
+            
+            
+            
